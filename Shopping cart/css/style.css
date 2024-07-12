@@ -1,4 +1,4 @@
-:root {
+/* :root {
   box-sizing: border-box;
   font-size: 0.875rem;
   font-family: "Rubik", sans-serif;
@@ -23,7 +23,8 @@
   border: 0;
   box-sizing: inherit;
   outline: 0 none;
-}
+} */
+
 /* Bootstrap breakpoints */
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
