@@ -1,4 +1,4 @@
-/* :root {
+:root {
   box-sizing: border-box;
   font-size: 0.875rem;
   font-family: "Rubik", sans-serif;
@@ -22,7 +22,21 @@
   border: 0;
   box-sizing: inherit;
   outline: 0 none;
-} */
+}
+body {
+  background-color: var(--dark);
+  display: flex;
+  justify-content: space-around;
+}
+div {
+  width: 300px;
+  height: 300px;
+  background-color: var(--green);
+  margin-top: 5%;
+}
+div:last-of-type {
+  background-color: var(--blue);
+}
 
 /* Bootstrap breakpoints */
 /* Small devices (landscape phones, 576px and up) */
