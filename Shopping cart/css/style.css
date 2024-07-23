@@ -122,7 +122,8 @@ td button span {
 
 input[type="number"]::-webkit-inner-spin-button,
 input [typey="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: textfield;
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 input[type="number"] {
