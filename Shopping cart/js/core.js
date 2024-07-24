@@ -41,11 +41,11 @@ const GenerateContent = class {
           <img
             src="img/fr-nnn.jpg"
             class="card-img-top"
-            style="max-width: 20rem; height: 13rem;"
+            style="max-width: 25rem; height: 15rem;"
             alt="fruitName"
             draggable="false"
           />
-          <div class="card.body">
+          <div class="card-body">
             <h1 class="card-title pricing-card-title">
               yyy € <small class="text-muted">/ Kg</small>
             </h1>
@@ -73,7 +73,7 @@ const GenerateContent = class {
   setPageContent = (fruits) => {
     let card = "";
     let productContainer = document.querySelector("#products-list");
-    console.log(productContainer);
+    // console.log(productContainer);
     for (let productNumber in fruits) {
       card = this.getProductFormat();
       card = card.replace(/xxx/, fruits[productNumber][0]);
