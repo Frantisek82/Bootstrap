@@ -1,16 +1,19 @@
 window.addEventListener("load", () => {
   // Select modal elements
-  let addedToCart = new bootstrap.Modal(document.querySelector("addedToCart"), {
-    keyboard: false,
-  });
+  let addedToCart = new bootstrap.Modal(
+    document.querySelector("#addedToCart"),
+    {
+      keyboard: false,
+    }
+  );
   let cartPurchased = new bootstrap.Modal(
-    document.querySelector("cartPurchased"),
+    document.querySelector("#cartPurchased"),
     {
       keyboard: false,
     }
   );
   let alreadyAddedToCart = new bootstrap.Modal(
-    document.querySelector("alreadyAddedToCart"),
+    document.querySelector("#alreadyAddedToCart"),
     {
       keyboard: false,
     }
@@ -50,13 +53,13 @@ window.addEventListener("load", () => {
   // Empty cart
   const emptyCart = () => {
     document.querySelector("tbody").innerHTML = "";
-    // updateCartTotal();
+    updateCartTotal();
     toggleShoppingControls(false);
   };
   // Simulate purchase and show alert
   const pruchaseClicked = () => {
     document.querySelector("tbody").innerHTML = "";
-    // updatecartTotal();
+    updatecartTotal();
     toggleShoppingControls(false);
     cartPurchased.show();
     setTimeout(() => {
@@ -72,7 +75,7 @@ window.addEventListener("load", () => {
     if (numItemsAdded == 0) {
       toggleShoppingControls(false);
     }
-    // updateCartTotal();
+    updateCartTotal();
   };
   // Add item to cart after clicking cart button
   const addToCartClicked = (e) => {
@@ -87,7 +90,7 @@ window.addEventListener("load", () => {
     );
     let imageSrc = shopItem.firstElementChild.src;
     addItemToCart(productId, title, productName, price, imageSrc);
-    // updateCartTotal();
+    updateCartTotal();
   };
   // Generate row for cart
   const addItemToCart = (productId, title, productName, price, imageSrc) => {
@@ -159,5 +162,17 @@ window.addEventListener("load", () => {
     cartRow.innerHTML = cartRowContents;
     document.querySelector("tbody").appendChild(cartRow);
     cart;
+    cartRow.lastElementChild.lastElementChild.lastElementChild.firstElementChild.addEventListener(
+      "click",
+      removeCartItem
+    );
+    cartRow.lastElementChild.firstElementChild.firstElementChild.firstElementChild.addEventListener(
+      "change",
+      updateCartTotal()
+    );
+    cartRow.lastElementChild.firstElementChild.firstElementChild.firstElementChild.addEventListener(
+      "input",
+      updateCartTotal()
+    );
   };
 });
